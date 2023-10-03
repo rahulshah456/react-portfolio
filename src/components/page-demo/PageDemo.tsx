@@ -23,6 +23,7 @@ const PageDemo = ({ header, subHeader, pageId }: Props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: token.colorBgLayout,
       }}
     >
       <div>

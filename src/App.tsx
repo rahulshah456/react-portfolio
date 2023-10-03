@@ -5,18 +5,29 @@ import ProjectsPage from "./pages/projects-page/ProjectsPage";
 import AboutPage from "./pages/about-page/AboutPage";
 import { ConfigProvider } from "antd";
 import NavMenu from "./components/nav/NavMenu";
+import { useEffect, useState } from "react";
+import { DarkTheme, Theme } from "./theme/Theme";
 
-function App() {
+const App = () => {
+  const [isDark, setDark] = useState(false);
+
+  useEffect(() => {
+    const cachedTheme = localStorage.getItem("isDark");
+    if (cachedTheme === "true") {
+      setDark(true);
+    } else {
+      setDark(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("isDark", isDark ? "true" : "false");
+  }, [isDark]);
+
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#0d6efd",
-        },
-      }}
-    >
-      <div style={{ position: "relative", backgroundColor: "#F6F6F6" }}>
-        <NavMenu />
+    <ConfigProvider theme={isDark ? DarkTheme : Theme}>
+      <div style={{ position: "relative" }}>
+        <NavMenu isDark={isDark} setDark={setDark} />
         <LandingPage id="home" />
         <SkillsPage id="skills" />
         <ExperiencePage id="experience" />
@@ -25,6 +36,6 @@ function App() {
       </div>
     </ConfigProvider>
   );
-}
+};
 
 export default App;

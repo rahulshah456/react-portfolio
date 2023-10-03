@@ -8,7 +8,12 @@ import WorkHistoryRoundedIcon from "@mui/icons-material/WorkHistoryRounded";
 import FaceRoundedIcon from "@mui/icons-material/FaceRounded";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
 
-const NavMenu = () => {
+interface Props {
+  isDark: boolean;
+  setDark: (checked: boolean) => void;
+}
+
+const NavMenu = ({ isDark, setDark }: Props) => {
   return (
     <Card
       className="elevated-nav-menu"
@@ -42,12 +47,12 @@ const NavMenu = () => {
         element={<FaceRoundedIcon style={{ fontSize: "2rem" }} />}
       />
       <NavMenuItem
-        header="Mode"
         element={
           <Switch
             checkedChildren="Dark"
             unCheckedChildren="Light"
-            defaultChecked
+            checked={isDark}
+            onChange={(checked: boolean) => setDark(checked)}
           />
         }
       />
