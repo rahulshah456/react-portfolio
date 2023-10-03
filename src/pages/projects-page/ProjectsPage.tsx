@@ -1,8 +1,8 @@
 import React from "react";
 import PageDemo from "../../components/page-demo/PageDemo";
 
-const ProjectsPage = () => {
-  return <PageDemo header="Projects" subHeader="Portfolio" />;
+const ProjectsPage = (props: any) => {
+  return <PageDemo pageId={props.id} header="Projects" subHeader="Portfolio" />;
 };
 
 export default ProjectsPage;

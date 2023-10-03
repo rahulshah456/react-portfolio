@@ -13,7 +13,7 @@ root.render(
     <BrowserRouter future={{ v7_startTransition: true }}>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="*" element={<ErrorsPage />} />
+        <Route path="*" element={<ErrorsPage id="error" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

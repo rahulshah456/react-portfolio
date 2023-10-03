@@ -18,3 +18,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.left-menu-item {
+  &:hover {
+    background-color: #e8eae6;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.elevated-nav-menu {
+  .ant-card-body {
+    padding: 0px !important;
+  }
+}
