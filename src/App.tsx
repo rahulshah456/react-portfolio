@@ -13,6 +13,7 @@ const App = () => {
 
   useEffect(() => {
     const cachedTheme = localStorage.getItem("isDark");
+    console.log(cachedTheme);
     if (cachedTheme === "true") {
       setDark(true);
     } else {

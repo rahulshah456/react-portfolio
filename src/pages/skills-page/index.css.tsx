@@ -1,6 +1,6 @@
 import { CSSInterface } from "../../utils/interfaces";
 
-const NavStyles: CSSInterface = {
+const SkillStyles: CSSInterface = {
   nav: {
     position: "fixed",
     left: "1rem",
@@ -8,22 +8,6 @@ const NavStyles: CSSInterface = {
     borderRadius: "8px",
     width: "90px",
     overflow: "hidden",
-  },
-  navBottom: {
-    position: "fixed",
-    bottom: "1rem",
-    left: "20vmin",
-    borderRadius: "8px",
-    width: "62vmin",
-    overflow: "hidden",
-  },
-  navBody: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  navBodyBottom: {
-    display: "flex",
-    flexDirection: "row",
   },
   menuItem: {
     width: "90px",
@@ -42,4 +26,4 @@ const NavStyles: CSSInterface = {
   },
 };
 
-export default NavStyles;
+export default SkillStyles;

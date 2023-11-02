@@ -27,7 +27,7 @@ const PageDemo = ({ header, subHeader, pageId }: Props) => {
       }}
     >
       <div>
-        <h1 style={{ fontSize: "10rem", color: token.colorPrimary }}>
+        <h1 style={{ fontSize: "10vmax", color: token.colorPrimary }}>
           {header}
         </h1>
         <h1 style={{ fontSize: "4rem" }}>{subHeader}</h1>

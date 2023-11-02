@@ -7,6 +7,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import WorkHistoryRoundedIcon from "@mui/icons-material/WorkHistoryRounded";
 import FaceRoundedIcon from "@mui/icons-material/FaceRounded";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
+import { useMediaQuery } from "react-responsive";
 
 interface Props {
   isDark: boolean;
@@ -14,12 +15,15 @@ interface Props {
 }
 
 const NavMenu = ({ isDark, setDark }: Props) => {
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+
   return (
     <Card
       className="elevated-nav-menu"
       bordered={false}
       hoverable
-      style={NavStyles.nav}
+      bodyStyle={isPortrait ? NavStyles.navBodyBottom : NavStyles.navBody}
+      style={isPortrait ? NavStyles.navBottom : NavStyles.nav}
     >
       <NavMenuItem
         header="Home"
@@ -48,12 +52,14 @@ const NavMenu = ({ isDark, setDark }: Props) => {
       />
       <NavMenuItem
         element={
-          <Switch
-            checkedChildren="Dark"
-            unCheckedChildren="Light"
-            checked={isDark}
-            onChange={(checked: boolean) => setDark(checked)}
-          />
+          isDark !== undefined && (
+            <Switch
+              checkedChildren="Dark"
+              unCheckedChildren="Light"
+              checked={isDark}
+              onChange={(checked: boolean) => setDark(checked)}
+            />
+          )
         }
       />
     </Card>
